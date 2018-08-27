@@ -1,0 +1,29 @@
+{
+  "name": "gunproject",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "webpack && node ./bin/www",
+    "postinstall": "webpack"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jsonwebtoken": "^8.3.0",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.18.3",
+    "rethinkdb": "^2.3.3",
+    "rethinkdb-websocket-client": "^0.5.1",
+    "rethinkdb-websocket-server": "^0.6.0",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0"
+  }
+}

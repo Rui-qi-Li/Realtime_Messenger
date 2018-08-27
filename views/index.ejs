@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <ul></ul>
+
+    <form>
+      Name: <input class="name">
+      Email: <input class="email">
+      <br><br>
+      <input type="submit" value="Send">
+    </form>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script>
+        $('form').submit(function(event) {
+            console.log("working!")
+            event.preventDefault(); //must be get rid of, or it won't work
+            var message = {};
+            message.name = $('form').find('.name').val();
+            message.email = $('form').find('.email').val();
+            // gun.set(message);
+            $('form').find('.name,.email').val("");
+            $.post('/',message,function(res){
+              console.log(res);
+            });
+        });
+    </script>
+  </body>
+</html>
