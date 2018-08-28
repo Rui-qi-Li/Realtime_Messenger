@@ -20,10 +20,11 @@ in the same time, simply queries for accessing some data that not saved in the c
 **Development Environment:**
 
 1. NodeJs (Express module)
-2. Rethinkdb (rethinkdb-websocket-client module)
-3. Webpack (library)
-4. Bootstrap 4.1 
-5. jQuery (library)
+2. JavaScript (jQuery library)
+3. Rethinkdb (rethinkdb-websocket-client module)
+4. Webpack (library)
+5. Bootstrap 4.1 
+
 #
 **Technologies:**
 
