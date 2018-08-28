@@ -22,7 +22,7 @@ in the same time, simply queries for accessing some data that not saved in the c
 1. NodeJs (Express module)
 2. JavaScript (jQuery library)
 3. Rethinkdb (rethinkdb-websocket-client module)
-4. Webpack (library)
+4. Webpack (bundler library)
 5. Bootstrap 4.1 
 
 #
