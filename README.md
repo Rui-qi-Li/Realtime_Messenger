@@ -11,13 +11,13 @@ change happen on the table or document instead of polling for changes in most tr
 The relational data modeling structure includes multiple tables and embedded arrays to suit large amounts of data and, 
 in the same time, simply queries for accessing some data that not saved in the current talbe ( like user name)
 #
-Functionality:
+**Functionality:**
 1. peer-to-peer chat
 2. multi-people group chat
 3. missing message notification
 4. friend invitation and authentication
 #
-Development Environment:
+**Development Environment:**
 
 1. NodeJs (Express module)
 2. Rethinkdb (rethinkdb-websocket-client module)
@@ -25,7 +25,7 @@ Development Environment:
 4. Bootstrap 4.1 
 5. jQuery (library)
 #
-Technologies:
+**Technologies:**
 
 Async function and promise-based code are implemented for handling multiple asynchronous processing to make sure all the 
 updated query results will happen sequentially. `$.when().apply()` is also used to make sure an array of deferred actions
