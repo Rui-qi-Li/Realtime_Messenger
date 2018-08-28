@@ -28,6 +28,10 @@ in the same time, simply queries for accessing some data that not saved in the c
 #
 **Technologies:**
 
+Database structure includes 3 relational tables - Profiles, Groups and Messages. They are contacted with each other by id
+and sub-indexes. The usage of `changes()` in Rethinkdb and rethinkdb-websocket-client module make it possible to send data 
+and push the result to the client in real time.
+
 Async function and promise-based code are implemented for handling multiple asynchronous processing to make sure all the 
 updated query results will happen sequentially. `$.when().apply()` is also used to make sure an array of deferred actions
 can be interacted at the right time.
