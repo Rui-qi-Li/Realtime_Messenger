@@ -4,12 +4,12 @@ Simple real time messenger application, which works as an internal communication
 group chat online. 
 
 The usage of real time database make it possible to set the listener subscribe to all the change events, 
-including every single new coming message or new group creation. Such a way allows users to receive the result of a single 
-change happen on the table or document instead of polling for changes in most traditional database architecture.
+including every single new coming message or new group creation. Such a way allows users/clients to continuously receive the result 
+of updated query in real time instead of polling for changes in traditional architecture.
 
 
 The relational data modeling structure includes multiple tables and embedded arrays to suit large amounts of data and, 
-in the same time, simply queries for accessing some data that not saved in the current talbe ( like user name)
+in the same time, simply queries for accessing some data that not saved in the current table ( like user name)
 #
 **Functionality:**
 1. peer-to-peer chat
