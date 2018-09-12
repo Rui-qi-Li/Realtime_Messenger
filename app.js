@@ -8,14 +8,12 @@ var cookieParser = require('cookie-parser');
 //Morgan is used for logging request details
 var logger = require('morgan');
 
-// var r = require('rethinkdb');
 app.io = require('socket.io')();
 
 app.wsListen = require('rethinkdb-websocket-server');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users')(app.io);
-var katieRouter = require('./routes/katie');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,7 +29,6 @@ app.use(express.static(path.join(__dirname, 'assets')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/katie', katieRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

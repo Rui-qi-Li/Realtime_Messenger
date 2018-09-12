@@ -1,13 +1,13 @@
 /** Client side script to let the browser download and use it */
 
 // Import third-party libraries (managed by npm and webpack)
-let RethinkdbWebsocketClient = require('rethinkdb-websocket-client');
-let r = RethinkdbWebsocketClient.rethinkdb;
+var RethinkdbWebsocketClient = require('rethinkdb-websocket-client');
+var r = RethinkdbWebsocketClient.rethinkdb;
 
-let loginname = "test";
-let senderid = "0";
-let roomid = "0";
-let chat_to;
+var loginname = "test";
+var senderid = "0";
+var roomid = "0";
+var chat_to;
 
 // Open a WebSocket connection to the server to send RethinkDB queries over
 const options = {
@@ -139,6 +139,9 @@ RethinkdbWebsocketClient.connect(options).then(function(conn) {
                     );// push end
                 });// forEach end
 
+                /**.apply() make sure $.when() can take an array instead of
+                 *  a promise which is used to be the expected parameter for
+                 *  $.when() */
                 $.when.apply($,Promise).done(function(){
                     resolve("3. push any groups updates to the user profiles")
                 })
