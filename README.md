@@ -1,5 +1,10 @@
 # Real-time Messenger
-
+```
+"scripts": {
+    "start": "webpack && node ./bin/www",
+    "postinstall": "webpack"
+  }
+```
 Simple real time messenger application, which works as an internal communication tool for peer-to-peer chat or multi-people 
 group chat online. 
 
