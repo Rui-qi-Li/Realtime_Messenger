@@ -1,6 +1,5 @@
 # Real-time Messenger
 
-develop route: localhost/user/
 
 Simple real time messenger application, which works as an internal communication tool for peer-to-peer chat or multi-people 
 group chat online. 
