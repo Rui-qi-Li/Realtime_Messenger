@@ -17,7 +17,6 @@ const options = {
     secure: false,     // set true to use secure TLS websockets
     db: 'test',        // default database, passed to rethinkdb.connect
 };
-const socket = io();//import socket.io library
 
 function fiendList_helper(key,receiver){
     /** id for list item: group_id

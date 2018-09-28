@@ -1,26 +1,35 @@
-// A Router instance is a complete middleware
-// It creates a router as a module, loads a middleware function in it, defines some routes, and mounts the router module
-// on a path in the main app.
 var express = require('express');
-// var Gun = require('gun');
-// var gun = Gun();
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Profile' });
-});
-router.post('/',function(req, res){
-  // var person = gun.get(req.body.name).put({name:req.body.name,email:req.body.email});
-  // gun.get('student').set(person);
-  // gun.get('student').once(function(node){
-  //     console.log('Student DB existed', node);
-  // });
-  //
-  // gun.get('student').map().once(function(node,id){
-  //     console.log(node);
-  // });
-  res.json();
+
+/* GET users listing. */
+// root url : "/users"
+router.get('/', function(req, res, next) {
+    rres.render('index', { title: 'Messenger' });
 });
 
-module.exports = router;
+module.exports = function(io){
+    /** socket.io */
+    io.on('connection',function(socket){
+        //count sockets
+        console.log(' %s sockets connected, id:', io.engine.clientsCount,socket.id);
+        //get list of connected clients in a room - 'room'
+        socket.on('chatlist',function(loginname){
+            socket.join('room');
+            io.nsps['/'].adapter.rooms['room'].sockets[socket.id] = loginname;
+            console.log(io.nsps['/'].adapter.rooms['room']);
+            io.emit('connected client',Object.values(io.nsps['/'].adapter.rooms['room'].sockets));
+        });
+
+        socket.on('disconnect', function() {
+            // leave ask for 2 args
+            socket.leave('room',function(err){if (err) throw err});
+            console.log("disconnect: ", socket.id);
+        });
+
+    });//socket end
+
+
+    return router;
+};
+// module.exports = router;
