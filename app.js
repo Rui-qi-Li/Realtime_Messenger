@@ -8,8 +8,10 @@ var cookieParser = require('cookie-parser');
 //Morgan is used for logging request details
 var logger = require('morgan');
 
+// optional requirement
 app.io = require('socket.io')();
 
+// rethinkdb-websocket-server connect to the rethinkdb server
 app.wsListen = require('rethinkdb-websocket-server');
 
 // pass app.io to module export

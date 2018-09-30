@@ -5,7 +5,7 @@ var router = express.Router();
 /* GET users listing. */
 // root url : "/users"
 router.get('/', function(req, res, next) {
-    rres.render('index', { title: 'Messenger' });
+    res.render('index', { title: 'Messenger' });
 });
 
 module.exports = function(io){
