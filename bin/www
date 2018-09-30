@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('gunproject:server');
+var debug = require('debug')('Realtime_Messenger:server');
 var http = require('http');
 // var Promise = require('bluebird');
 /**

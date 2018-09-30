@@ -1,7 +1,7 @@
 # Real-time Messenger
 ```
 "scripts": {
-    "start": "webpack && node ./bin/www",
+    "start": "webpack --config webpack.config.js && node ./bin/www",
     "postinstall": "webpack"
   }
 ```
