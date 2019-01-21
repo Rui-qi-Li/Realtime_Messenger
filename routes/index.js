@@ -5,9 +5,24 @@ var router = express.Router();
 /* GET users listing. */
 // root url : "/users"
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Messenger' });
+    var cookie = req.cookies["useremail"];
+    if (cookie == null ){
+        res.redirect("/login");
+    }
+    else{
+        console.log(cookie);
+        res.clearCookie("useremail",{httpOnly: true});
+        res.render('index',cookie);
+    }
 });
-
+router.get('/login', function(req, res, next) {
+    res.render('login');
+});
+router.post('/', function(req, res, next) {
+    console.log(req.body);
+    res.cookie("useremail",req.body,{maxAge: 900000, httpOnly: true});
+    res.redirect("/");
+});
 module.exports = function(io){
     /** socket.io */
     io.on('connection',function(socket){

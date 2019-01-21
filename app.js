@@ -21,7 +21,7 @@ var indexRouter = require('./routes/index')(app.io);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-//use middleware
+//use middleware, must before router
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

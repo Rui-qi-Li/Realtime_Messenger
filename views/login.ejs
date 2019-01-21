@@ -12,18 +12,18 @@
 </head>
 <body class="bg-dark">
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
-    <a class="navbar-brand" href="#">LOGO</a>
+    <a class="navbar-brand" href="#">Demo</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0 font-weight-bold">
-            <li class="nav-item active px-4">
-                <a class="nav-link" href="#">Chat room <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item px-4">
-                <a id="registerBtn" class="nav-link" href="#">Register</a>
+                <a class="nav-link" href="/">Chat room <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active px-4">
+                <a id="registerBtn" class="nav-link" href="/login">Register/Login</a>
             </li>
         </ul>
     </div>
@@ -33,6 +33,24 @@
 
     <!--main-->
     <div class="top container p-0">
+        <div class="alert alert-primary" role="alert">
+            <b>Use prepared user email to login:</b> rachel@example.com, kitty@example.com, brid@example.com, stark@example.com
+        </div>
+        <div class="alert alert-danger col-4 collapse" role="alert" id="testalert">
+            User email is not found, try again using the prepared user email
+        </div>
+        <form class="page1 my-2">
+            <h2>Enter your email address </h2>
+            <div class="form-inline">
+                <input class="email form-control mr-sm-2" placeholder="Your email" required>
+                <button class="btn btn-primary">Login</button>
+            </div>
+            <hr class="my-5 border border-secondary">
+        </form>
+        <form class="hidden_form" action="/" method="post">
+            <input class="hidden_input" type="hidden" name="useremail" value="">
+        </form>
+        <!--<button class="register btn btn-primary">Register</button>-->
 
         <form class="page3 my-2" style="display: none">
             <h2>Enter your name </h2>
@@ -49,6 +67,8 @@
 
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/bundle.js"></script>
 
 </body>
 </html>
