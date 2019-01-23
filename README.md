@@ -1,7 +1,9 @@
 # Real-time Messenger
 
 ## Demo
-The demo of this messenger application has been put on an EC2 instance: [click here](http://18.218.221.72) 
+The demo of this messenger application has been put on an EC2 instance (ubuntu 18.04) with Rethinkdb docker official images: 
+[click here](http://18.218.221.72) 
+
 ## Introduction
 Simple real time messenger application, which works as an internal communication tool for peer-to-peer chat or multi-people 
 group chat online. 
