@@ -24,7 +24,7 @@ webpack starts:
     "postinstall": "webpack"
   }
 ```
-
+start app with ``npm start``
 ## Functionality
 1. peer-to-peer chat
 2. multi-people group chat
