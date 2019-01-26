@@ -17,15 +17,34 @@ The relational data modeling structure includes multiple tables and embedded arr
 in the same time, simply queries for accessing some data that not saved in the current table ( like user name)
 
 ## Configuration
-webpack.config.js file:
+open a port 28015 on rethinkdb server via rethinkdb-websocket-server module
 ```
-module.exports = {
-    entry: ['./client/app.js'],
-    output: {
-        path: __dirname,
-        filename: 'assets/bundle.js'
-    }
+app.wsListen = require('rethinkdb-websocket-server');
+app.wsListen.listen({
+    httpServer: server,
+    httpPath:'/',
+    dbHost: 'localhost',
+    dbPort: 28015,
+    unsafelyAllowAnyQuery: true
+});
+```
+create a WebSocket connection to send queries 
+```
+const options = {
+    host: '18.218.221.72', 
+    port: 3000,       
+    path: '/',       
+    secure: false,     
+    db: 'test',        
 };
+```
+open a connection from client to run queries 
+```
+var RethinkdbWebsocketClient = require('rethinkdb-websocket-client'); // third-party rethinkdb client
+var r = RethinkdbWebsocketClient.rethinkdb;
+RethinkdbWebsocketClient.connect(options).then(function(conn) {
+    // functional codes
+})
 ```
 start scripts:
 ```
