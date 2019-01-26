@@ -17,7 +17,7 @@ The relational data modeling structure includes multiple tables and embedded arr
 in the same time, simply queries for accessing some data that not saved in the current table ( like user name)
 
 ## Configuration
-open a port 28015 on rethinkdb server via rethinkdb-websocket-server module
+open a port 28015 on rethinkdb server 
 ```
 app.wsListen = require('rethinkdb-websocket-server');
 app.wsListen.listen({
