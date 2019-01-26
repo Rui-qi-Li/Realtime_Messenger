@@ -40,7 +40,7 @@ const options = {
 ```
 open a connection from client to run queries 
 ```
-var RethinkdbWebsocketClient = require('rethinkdb-websocket-client'); // third-party rethinkdb client
+var RethinkdbWebsocketClient = require('rethinkdb-websocket-client'); 
 var r = RethinkdbWebsocketClient.rethinkdb;
 RethinkdbWebsocketClient.connect(options).then(function(conn) {
     // functional codes
