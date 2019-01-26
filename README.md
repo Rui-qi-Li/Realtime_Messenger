@@ -17,7 +17,17 @@ The relational data modeling structure includes multiple tables and embedded arr
 in the same time, simply queries for accessing some data that not saved in the current table ( like user name)
 
 ## Configuration
-webpack starts:
+webpack.config.js file:
+```
+module.exports = {
+    entry: ['./client/app.js'],
+    output: {
+        path: __dirname,
+        filename: 'assets/bundle.js'
+    }
+};
+```
+start scripts:
 ```
 "scripts": {
     "start": "webpack --config webpack.config.js && node ./bin/www",
